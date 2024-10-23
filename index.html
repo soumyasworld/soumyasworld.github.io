@@ -16,8 +16,8 @@ Welcome to my home page . . .
 <br>
 
 <meta http-equiv="refresh" content="5">
-<pre><h4>Server Status:</h4></pre>
-<p>Page refreshes in <span id="countdown">5</span> seconds...</p>
+<pre><h2>Server Status:</h2></pre>
+<pre>Page refreshes in <span id="countdown">5</span> seconds...</pre>
 <p id="demo"></p>
 
 <style>
@@ -72,7 +72,7 @@ function checkserver(id){
 
 
 for (let i = 0; i < ser.length; i++) {
-	text += '<pre><h4>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h4></pre><br>';
+	text += '<pre><h3>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h3></pre><br>';
 	  text += '<button id="visit-btn-' + (i+1) + '" class="inactive-btn" onclick="window.open(\'' + ser[i] + '\')" disabled>Visit Site</button><br><br>';
 }
 
