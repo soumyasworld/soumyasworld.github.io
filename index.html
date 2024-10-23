@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 Hey, 
 <br>
 It's me,
@@ -69,7 +72,7 @@ function checkserver(id){
 
 
 for (let i = 0; i < ser.length; i++) {
-	text += '<pre><h4>Server Link:   <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>    *Status >> <font id="'+(i+1)+'">Unknown</font></h4></pre><br>';
+	text += '<pre><h4>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h4></pre><br>';
 	  text += '<button id="visit-btn-' + (i+1) + '" class="inactive-btn" onclick="window.open(\'' + ser[i] + '\')" disabled>Visit Site</button><br><br>';
 }
 
@@ -93,3 +96,5 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000); // Update countdown every second
 </script>
+	</body>
+</html>
