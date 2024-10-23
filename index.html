@@ -16,8 +16,10 @@ Welcome to my home page . . .
 <br>
 
 <meta http-equiv="refresh" content="5">
-<pre><h2>Check My Server Status:</h2></pre>
-<pre>Page refreshes in <span id="countdown">5</span> seconds...</pre>
+<pre style="text-align: center;"><h1>Check My Server Status:</h1></pre>
+
+<h3><pre style="text-align: center;">Page refreshes in <span id="countdown">5</span> seconds...</pre></h3>
+<!-- <pre>Page refreshes in <span id="countdown">5</span> seconds...</pre> -->
 <p id="demo"></p>
 
 <style>
@@ -69,8 +71,8 @@ function checkserver(id){
 
 
 for (let i = 0; i < ser.length; i++) {
-	text += '<pre><h3>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h3></pre><br>';
-	  text += '<button id="visit-btn-' + (i+1) + '" class="inactive-btn" onclick="window.open(\'' + ser[i] + '\')" disabled>Visit Site</button><br><br>';
+	text += '<pre style="text-align: center;"><h2>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h2></pre>';
+	  text += '<pre style="text-align: center;"<h3><button id="visit-btn-' + (i+1) + '" class="inactive-btn" onclick="window.open(\'' + ser[i] + '\')" disabled>Visit Site</button></h3></pre><br><br>';
 }
 
 document.getElementById("demo").innerHTML = text;
@@ -92,14 +94,8 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000); // Update countdown every second
-</script>
-
-	<h3><pre style="color: red;">*Note : If the server status is "<b style="color: white; background-color: green;">live</b>",<br>
-		you can access my site by clicking the "<b style="color: white; background-color: green;">Visit Site</b>" option.<br>
-		Otherwise, access to the site will not be possible.</pre></h3>
-	<br>
-	<br>
-
-	<h3><pre style="text-align: center;">Page refreshes in <span id="countdown">5</span> seconds...</pre></h3>
+pti</script>
+<pre style="color: red;"><h3>*Note : If the server status is "live", you can access my site by clicking the 'Visit Site' option. 
+    Otherwise, access to my site will not be possible.</h3></pre>
 	</body>
 </html>
