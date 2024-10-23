@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+Hey, 
+<br>
+It's me,
+<br>
+<font color = "#002057"><b>Soumya</font><font color="#ff7b00"> Singha </b></font>
+<br>
+Welcome to my home page . . .
+
+<br><br>
+  For any query, mail me at- <font color="blue"><a href="mailto:soumyasworld@duck.com" aria-label="Mail" target="_blank">soumyasworld@duck.com</a></font>
+<br>
+<hr>
+<br>
+
+<meta http-equiv="refresh" content="5">
+<pre><h2>Server Status:</h2></pre>
+<pre>Page refreshes in <span id="countdown">5</span> seconds...</pre>
+<p id="demo"></p>
+
+<style>
+  /* Add a class for the active (green) button */
+  .active-btn {
+    background-color: green;
+    color: white;
+    border: 2px solid #12c8ff;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+
+  .inactive-btn {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: not-allowed;
+  }
+</style>
+
+<script>
+const ser = 	[
+		"https://pc8484-anupam.netork.top" , 
+		"https://pc8089-anupam.netork.top" , 
+		"https://ssh-iiests.netork.top", 
+		"https://soumyasworld.netork.top"
+		];
+let text = "";
+let refreshInterval = 5; // Time in seconds for auto-refresh
+	
+function checkserver(id){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		let status="\<font style=\"background\-color\:yellow\; color:black\;\" \>Unknown\<\/font\>";
+		if (this.readyState == 4 && this.status == 200) {
+			status = "\<font style=\"background\-color\:green\; color:white\;\" \>Live\<\/font\>";
+			document.getElementById("visit-btn-" + id).disabled = false;  // Enable the visit button
+			document.getElementById("visit-btn-" + id).className = "active-btn";  // Add active button class
+		}
+		else if(this.readyState == 4 && this.status == 502){
+			status="Down";
+			document.getElementById("visit-btn-" + id).disabled = true;   // Disable the visit button
+			document.getElementById("visit-btn-" + id).className = "inactive-btn";  // Add inactive button class
+		}
+		document.getElementById(id).innerHTML = status;
+	};
+	xhttp.open("GET", ser[id-1], true);
+	xhttp.setRequestHeader('Cache-Control', 'no-cache');
+	xhttp.send();
+}
+
+
+for (let i = 0; i < ser.length; i++) {
+	text += '<pre><h3>Server Link:  <a target="_blank" href="'+ser[i]+'">'+ser[i]+'</a>   *Status >> <font id="'+(i+1)+'">Unknown</font></h3></pre><br>';
+	  text += '<button id="visit-btn-' + (i+1) + '" class="inactive-btn" onclick="window.open(\'' + ser[i] + '\')" disabled>Visit Site</button><br><br>';
+}
+
+document.getElementById("demo").innerHTML = text;
+
+for (let i = 0; i < ser.length; i++) {
+	checkserver(i+1);
+}
+
+// Countdown Timer for Auto-refresh
+let countdown = refreshInterval;
+let countdownElement = document.getElementById('countdown');
+
+function updateCountdown() {
+    countdown--;
+    countdownElement.innerHTML = countdown;
+    if (countdown === 0) {
+        location.reload(); // Reload the page when countdown reaches 0
+    }
+}
+
+setInterval(updateCountdown, 1000); // Update countdown every second
+</script>
+	</body>
+</html>
