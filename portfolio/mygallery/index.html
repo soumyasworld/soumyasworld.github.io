@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Login System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #007bff, #00c6ff); /* Gradient background */
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+            position: relative; /* Set position for absolute elements */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #welcomeNotice {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            color: #007bff; /* Blue text color */
+            text-align: center; /* Center the notice text */
+        }
+
+        #loginForm {
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            background: white; /* White background for the form */
+            max-width: 400px; /* Set a max width for the form */
+            width: 100%; /* Full width up to max-width */
+            animation: slideIn 0.5s ease forwards; /* Slide-in animation for the form */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #343a40; /* Darker text color */
+            text-align: center; /* Center the heading */
+            font-weight: bold; /* Bold heading */
+        }
+
+        p {
+            color: #6c757d; /* Subtle gray text */
+            text-align: center; /* Center the paragraph */
+            margin-bottom: 20px; /* Add margin below the paragraph */
+        }
+
+        input {
+            padding: 12px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ced4da; /* Light gray border */
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+        }
+
+        input:focus {
+            border-color: #007bff; /* Blue border on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff; /* Blue background for the button */
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition for button effects */
+            padding: 12px; /* Add padding to button */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Increase font size */
+            font-weight: bold; /* Bold text for button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.95); /* Slightly shrink button on click */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            color: #ffffff; /* White text color for footer */
+            font-size: 14px;
+        }
+
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff; /* Link color */
+            text-decoration: none; /* Remove underline from links */
+            transition: color 0.3s; /* Smooth transition for link color */
+        }
+
+        .link:hover {
+            color: #0056b3; /* Darker blue on hover for links */
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px; /* Smaller font for contact */
+            color: #343a40; /* Darker color for contact */
+        }
+    </style>
+</head>
+<body>
+
+<div id="welcomeNotice">
+    Hey, It's Me
+    <br>
+    <b>Soumya Singha</b>
+    <br>
+    Welcome to Soumya's Gallery Login Page !
+</div>
+
+<div id="loginForm">
+    <h2>Login</h2>
+    <p>Enter your username and password to access Soumya's Gallery...</p>
+
+    <form onsubmit="return handleLogin();">
+        <label for="username">👤 Username:</label><br>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br>
+
+        <label for="password">🔑 Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+
+        <input type="submit" value="Let's Go >>">
+    </form>
+
+    <a href="#" class="link" onclick="showPopup(); return false;">Forgotten Password?</a>
+    <a href="#" class="link" onclick="showPopup(); return false;">Create New Account</a>
+    
+    <div class="contact">📧 Contact us at: <a href="mailto:soumyasworld@duck.com" style="color: #007bff;">soumyasworld@duck.com</a></div>
+</div>
+
+<div class="footer">
+    &copy; 2024 soumyasworld | All Rights Reserved
+</div>
+
+<script>
+    // Variables to track login state
+    let firstAttempt = true;
+    let savedUsername = '';
+    let savedPassword = '';
+
+    function handleLogin() {
+        // Fetch the entered username and password
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // If it's the first attempt, save the username and password, show error
+        if (firstAttempt) {
+            savedUsername = username;
+            savedPassword = password;
+            firstAttempt = false; // Mark that user has tried once
+            alert("Wrong username or password, Don't be worry,This is not your last chance, Please try again.");
+            
+            // Clear the input fields after the first attempt
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            
+            return false; // Prevent form submission
+        }
+
+        // On second attempt, check if entered credentials match the first attempt
+        if (username === savedUsername && password === savedPassword) {
+            alert("Welcome !, " + username + "! 🎉 Let's go to Soumya's Gallery");
+            window.location.href = "/portfolio/mygallery/gallery.html"; // Redirect to your desired page
+            return false; // Prevent form submission (because we're redirecting)
+        } else {
+            alert("Wrong username or password again !! Reloading the page...");
+            // Clear the input fields before reloading the page
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            // Automatically reload the page after showing the alert
+            setTimeout(() => {
+                location.reload(); // Reload the page
+            }, 2000); // Delay of 2 seconds before reloading
+            return false; // Prevent form submission
+        }
+    }
+
+    function showPopup() {
+        alert("You are not eligible for this !!");
+        location.reload(); // Reload the page
+    }
+</script>
+
+</body>
+</html>
+
