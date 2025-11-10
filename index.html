@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Home Page</title>
+<style>
+  body{
+  /*
+        margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff; */
+    
+    background:#ffffff;
+    font-family:system-ui, sans-serif;
+  }
+
+  .btn-group{
+    display:flex;
+    gap:20px;
+  }
+
+  .btn{
+    position:relative;
+    padding:12px 32px;
+    font-size:16px;
+    color:#0066ff; /* text blue */
+    background:transparent;
+    border:2px solid #0066ff; /* outline blue */
+    border-radius:10px;
+    cursor:pointer;
+    overflow:hidden;
+    transition:color .3s ease, border-color .3s ease, background .3s ease;
+  }
+
+  /* Shine animation layer */
+  .btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:120%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, #0066ff55, transparent);
+    transform:skewX(-15deg);
+    transition:all .4s ease;
+  }
+
+  .btn:hover::before{
+    left:120%; /* sweeping shine */
+  }
+
+  /* Glow on hover */
+  .btn:hover{
+    color:#ffffff; /* white text */
+    background:#0066ff; /* blue fill */
+    border-color:#ffffff; /* white outline */
+    box-shadow:0 0 12px #0066ff88; /* blue glow */
+  }
+
+  /* Outline expansion animation */
+  .btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:10px;
+    border:2px solid #3399ff;
+    opacity:0;
+    transform:scale(1.3);
+    transition:opacity .4s ease, transform .4s ease;
+  }
+  .btn:hover::after{
+    opacity:1;
+    transform:scale(1);
+  }
+</style>
+</head>
+<body>
+    <div>
+    Hey, 
+I'm<br>
+<font color = "#002057"><b>Soumya</font><font color="#ff7b00"> Singha </b></font>
+<br>
+Welcome to my home page . . .
+
+<br><br>
+
+  <div class="btn-group">
+    <a class="nav-item" href="https://soumyasworld.github.io/portfolio/"> <button class="btn">Portfolio</button></a>
+     <a class="nav-item" href="https://soumyasworld.github.io/aei.html"><button class="btn">asymmetric-encryption-info</button></a>
+     <a href="mailto:soumyasworld@duck.com" aria-label="Mail" target="_blank"><button class="btn">Contact Me</button></a>
+  </div>
+
+
+    <br> <br> <br> <br> <br> <br> <br>
+  <marquee>
+       <p>Thanks for visit my site...!!</p>
+   </marquee>
+   <br><br>
+ <div style="max-width: 160px; margin: 20px auto; padding: 12px; text-align: center; border: 1px solid #e0e0e0; border-radius: 10px; background-color: #fff; font-family: Arial, sans-serif;">
+  <h2 style="margin: 0 0 8px; font-size: 14px; font-weight: bold; color: #222; letter-spacing: 0.5px;">
+    Visitors
+  </h2>
+  <a href="https://www.freecounterstat.com" title="page counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=5ksls9jrlfes4gsxbhx8c57h447j6txe" border="0" title="page counter" alt="page counter"></a>
+  </a>
+</div>
+</body>
+</html>
+
+
