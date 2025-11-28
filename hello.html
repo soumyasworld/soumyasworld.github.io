@@ -5,65 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>asymmetric-encryption-info</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, rgba(20,32,48,0.75), rgba(12,20,30,0.85));
-            color: #ffffff;
-        }
-
-
-        /* .dark-theme {
-            background-color: #121212;
-            color: #ffffff;
-        } */
-	    .container {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.35);
+        }
+        
+        .light-theme {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e0e0e0;
+        }
+        
+        .dark-theme {
+            background: linear-gradient(135deg, #2e3a59 0%, #3d4f6f 50%, #2e3a59 100%);
+            color: #e0e0e0;
+        }
+        
+        .container {
+            padding: 30px 25px;
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px 50px;
+            }
+        }
+        
+        .dark-theme .container {
+            background: rgba(70, 85, 115, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
-
+        
+        .light-theme .container {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-word;
+            line-height: 1.6;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+        
+        @media (min-width: 768px) {
+            pre {
+                font-size: 14px;
+            }
+        }
+        
         a {
-            color: #06f9f1;
-            
+            transition: all 0.3s;
+            word-break: break-all;
         }
-
+        
+        .dark-theme a {
+            color: #88b3ff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(136, 179, 255, 0.4);
+            padding: 2px 0;
+            display: inline-block;
+        }
+        
+        .dark-theme a:hover {
+            color: #aac8ff;
+            border-bottom-color: #aac8ff;
+        }
+        
+        .light-theme a {
+            color: #e0e0ff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(224, 224, 255, 0.5);
+            padding: 2px 0;
+            display: inline-block;
+        }
+        
+        .light-theme a:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+        
+        .binary-rain {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <div class="binary-rain" id="binaryRain"></div>
     <div class="container">
-	<pre>
+        <pre>
          	asymmetric-encryption-info
     
-	User-ID:		SOUMYA SINGHA email
+	User-ID:		 email
 	Valid from:		09-08-2025 12:30 PM
 	Type:			ECC (sign and encrypt)
 	Usage:			Signature, Encryption, Authentication, Certification
-	Fingerprint:		5DDF 2A5F 2285 AFB7 998D D003 E701 028A E353 7B43
+	Fingerprint:		5 E753 7B43
 	
 	 Messages/files which are sent to me(specially over public channel), are expected to be encrypted with the following GnuPG public key.
-  	Download >> <a href="/aei/SOUMYA SINGHA email_public.asc">SOUMYA SINGHA email_public.asc</a>
+  	Download >> <a href="/aei/email_public">email_public</a>
   	or copy from below.
-
 		
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEaJZVuBYJKwYBBAHaRw8BAQdAlci3vYVQqmLJfHzlfWR5tZknQX4A+Ep6NvZm
+mDMmLJfHzlfWR5tZknQX4A+Ep6NvZm
 p0VwsuK0KVNPVU1ZQSBTSU5HSEEgPGlhbXNvdW15YXNpbmdoYUBnbWFpbC5jb20+
-iJMEExYKADsWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUCaJZVuAIbIwULCQgHAgIi
-AgYVCgkICwIEFgIDAQIeBwIXgAAKCRDnAQKK41N7QwHtAQDKwHq4yQGJTXwQ90Ga
-8ealrrQvtKDP/QG/LyEkIGS+rAD/bhCISvWN50kMe7k0Lf9hfzWxul4SqXhrsFIy
-mnISbQy4OARollW4EgorBgEEAZdVAQUBAQdAEZJ1WAPpF2XAx9T8gQfyYpv/YvgF
-mf5Cj49wjPBoKygDAQgHiHgEGBYKACAWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUC
+iJMEExYKADsWIQRd3ypfIoWvt5mNwULCQgHAgIi
+AgYVCgkICwIEFgIDAQIeBwIAQKK41N7QwHtAQDKwHq4yQGJTXwQ90Ga
+8ealrrQvtKDP/QG/LyEkIGSEZJ1WAPpF2XAx9T8gQfyYpv/YvgF
+mf5Cj49YKACAWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUC
 aJZVuAIbDAAKCRDnAQKK41N7Q+0HAP42GReAnaTaLQagcZmJsqRNU1AsHe5PNQkV
-WrYACRBycwD+PWMnzAOlOCoomk40sTtJ1U9UzYk6RVr2vInye0zBrw0=
+WrYACRBycwD+PWMJ1U9UzYk6RVr2vInye0zBrw0=
 =H8cN
 -----END PGP PUBLIC KEY BLOCK-----
-
 </pre>
-   </div>
-
-  
+    </div>
+    <script>
+        const currentTheme = 'dark-theme';
+        document.body.classList.add(currentTheme);
+    </script>
 </body>
 </html>
