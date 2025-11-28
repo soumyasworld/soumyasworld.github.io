@@ -17,23 +17,20 @@
             align-items: center;
             justify-content: center;
             padding: 15px;
-        }
-        
-        .light-theme {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #e0e0e0;
-        }
-        
-        .dark-theme {
-            background: linear-gradient(135deg, #2e3a59 0%, #3d4f6f 50%, #2e3a59 100%);
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1f2e 0%, #252b3d 50%, #1a1f2e 100%);
+            color: #d0d0d0;
         }
         
         .container {
-            padding: 30px 25px;
+            padding: 25px 20px;
             position: relative;
             max-width: 900px;
             width: 100%;
+            background: rgba(40, 45, 60, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
         
         @media (min-width: 768px) {
@@ -42,106 +39,277 @@
             }
         }
         
-        .dark-theme .container {
-            background: rgba(70, 85, 115, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .light-theme .container {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break: break-word;
-            line-height: 1.6;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            overflow-x: auto;
+        h1 {
+            text-align: center;
+            font-size: 18px;
+            margin: 0 0 25px 0;
+            font-weight: normal;
+            color: #e8e8e8;
         }
         
         @media (min-width: 768px) {
-            pre {
+            h1 {
+                font-size: 20px;
+            }
+        }
+        
+        .info-section {
+            margin-bottom: 25px;
+        }
+        
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+            gap: 4px;
+        }
+        
+        @media (min-width: 480px) {
+            .info-row {
+                flex-direction: row;
+                gap: 10px;
+            }
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #9aa5b8;
+            min-width: 140px;
+            font-size: 13px;
+        }
+        
+        @media (min-width: 768px) {
+            .label {
                 font-size: 14px;
             }
         }
         
+        .value {
+            color: #d0d0d0;
+            word-break: break-word;
+            font-size: 13px;
+        }
+        
+        @media (min-width: 768px) {
+            .value {
+                font-size: 14px;
+            }
+        }
+        
+        .notice {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        @media (min-width: 768px) {
+            .notice {
+                font-size: 14px;
+            }
+        }
+        
+        .download-section {
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(100, 130, 180, 0.12);
+            border-radius: 8px;
+            border: 1px solid rgba(100, 130, 180, 0.2);
+        }
+        
         a {
-            transition: all 0.3s;
+            color: #7799cc;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(119, 153, 204, 0.4);
+            padding: 2px 4px;
+            display: inline-block;
             word-break: break-all;
+            transition: all 0.3s;
         }
         
-        .dark-theme a {
-            color: #88b3ff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(136, 179, 255, 0.4);
-            padding: 2px 0;
+        a:hover {
+            color: #99bbee;
+            border-bottom-color: #99bbee;
+            background: rgba(119, 153, 204, 0.15);
+        }
+        
+        .key-block {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+        
+        .key-content {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #b0b0b0;
+            word-break: break-all;
+            white-space: pre-wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .key-content {
+                font-size: 12px;
+            }
+        }
+        
+        .section-title {
+            color: #7799cc;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(119, 153, 204, 0.3);
+            padding-bottom: 8px;
             display: inline-block;
+            width: 100%;
         }
         
-        .dark-theme a:hover {
-            color: #aac8ff;
-            border-bottom-color: #aac8ff;
+        .key-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
         }
         
-        .light-theme a {
-            color: #e0e0ff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(224, 224, 255, 0.5);
-            padding: 2px 0;
-            display: inline-block;
+        .copy-btn {
+            background: rgba(119, 153, 204, 0.2);
+            border: 1px solid rgba(119, 153, 204, 0.4);
+            color: #7799cc;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
         }
         
-        .light-theme a:hover {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
+        .copy-btn:hover {
+            background: rgba(119, 153, 204, 0.3);
+            border-color: #7799cc;
+            color: #99bbee;
         }
         
-        .binary-rain {
-            display: none;
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-btn.copied {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: rgba(76, 175, 80, 0.6);
+            color: #4caf50;
+        }
+        
+        .copy-icon {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="binary-rain" id="binaryRain"></div>
     <div class="container">
-        <pre>
-         	asymmetric-encryption-info
-    
-	User-ID:		 email
-	Valid from:		09-08-2025 12:30 PM
-	Type:			ECC (sign and encrypt)
-	Usage:			Signature, Encryption, Authentication, Certification
-	Fingerprint:		5 E753 7B43
-	
-	 Messages/files which are sent to me(specially over public channel), are expected to be encrypted with the following GnuPG public key.
-  	Download >> <a href="/aei/email_public">email_public</a>
-  	or copy from below.
-		
------BEGIN PGP PUBLIC KEY BLOCK-----
-mDMmLJfHzlfWR5tZknQX4A+Ep6NvZm
+        <h1>asymmetric-encryption-info</h1>
+        
+        <div class="info-section">
+            <div class="section-title">Key Information</div>
+            <div class="info-row">
+                <span class="label">User-ID:</span>
+                <span class="value">SOUMYA SINGHA email</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Valid from:</span>
+                <span class="value">09-08-2025 12:30 PM</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Type:</span>
+                <span class="value">ECC (sign and encrypt)</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Usage:</span>
+                <span class="value">Signature, Encryption, Authentication, Certification</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Fingerprint:</span>
+                <span class="value">5DDF 2A5F 2285 AFB7 998D D003 E701 028A E353 7B43</span>
+            </div>
+        </div>
+        
+        <div class="notice">
+            Messages/files which are sent to me (especially over public channel), are expected to be encrypted with the following GnuPG public key.
+        </div>
+        
+        <div class="download-section">
+            <strong>Download:</strong> <a href="/aei/SOUMYA SINGHA email_public.asc">SOUMYA SINGHA email_public.asc</a>
+            <div style="margin-top: 8px; font-size: 12px; color: #b8c5d6;">or copy from below</div>
+        </div>
+        
+        <div class="key-block">
+            <div class="key-header">
+                <div class="section-title" style="margin-bottom: 0; width: auto;">PGP Public Key</div>
+                <button class="copy-btn" onclick="copyKey()" title="Copy to clipboard">
+                    <svg class="copy-icon" viewBox="0 0 24 24">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="key-content" id="pgpKey">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaJZVuBYJKwYBBAHaRw8BAQdAlci3vYVQqmLJfHzlfWR5tZknQX4A+Ep6NvZm
 p0VwsuK0KVNPVU1ZQSBTSU5HSEEgPGlhbXNvdW15YXNpbmdoYUBnbWFpbC5jb20+
-iJMEExYKADsWIQRd3ypfIoWvt5mNwULCQgHAgIi
-AgYVCgkICwIEFgIDAQIeBwIAQKK41N7QwHtAQDKwHq4yQGJTXwQ90Ga
-8ealrrQvtKDP/QG/LyEkIGSEZJ1WAPpF2XAx9T8gQfyYpv/YvgF
-mf5Cj49YKACAWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUC
+iJMEExYKADsWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUCaJZVuAIbIwULCQgHAgIi
+AgYVCgkICwIEFgIDAQIeBwIXgAAKCRDnAQKK41N7QwHtAQDKwHq4yQGJTXwQ90Ga
+8ealrrQvtKDP/QG/LyEkIGS+rAD/bhCISvWN50kMe7k0Lf9hfzWxul4SqXhrsFIy
+mnISbQy4OARollW4EgorBgEEAZdVAQUBAQdAEZJ1WAPpF2XAx9T8gQfyYpv/YvgF
+mf5Cj49wjPBoKygDAQgHiHgEGBYKACAWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUC
 aJZVuAIbDAAKCRDnAQKK41N7Q+0HAP42GReAnaTaLQagcZmJsqRNU1AsHe5PNQkV
-WrYACRBycwD+PWMJ1U9UzYk6RVr2vInye0zBrw0=
+WrYACRBycwD+PWMnzAOlOCoomk40sTtJ1U9UzYk6RVr2vInye0zBrw0=
 =H8cN
------END PGP PUBLIC KEY BLOCK-----
-</pre>
+-----END PGP PUBLIC KEY BLOCK-----</div>
+        </div>
     </div>
+    
     <script>
-        const currentTheme = 'dark-theme';
-        document.body.classList.add(currentTheme);
+        function copyKey() {
+            const keyText = document.getElementById('pgpKey').textContent;
+            const btn = document.querySelector('.copy-btn');
+            const icon = btn.querySelector('.copy-icon');
+            
+            navigator.clipboard.writeText(keyText).then(() => {
+                icon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    icon.innerHTML = '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
     </script>
 </body>
 </html>
