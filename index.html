@@ -237,24 +237,44 @@
 
   /* Footer */
   /* Footer container */
+/* Footer */
+/* Footer Wrapper */
 footer {
   max-width: 1100px;
   margin: 14px auto;
-  padding: 40px 20px;      /* reduced padding for professional look */
+  padding: 40px 20px;
   color: var(--muted);
-  /* display: flex;            needed for flex properties */
-  flex-wrap: wrap;          /* allows content to wrap on smaller screens */
-  align-items: flex-start;  /* aligns items at top */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
   font-family: Arial, sans-serif;
 }
 
-/* Social icons */
+/* Footer Box (LEFT + RIGHT) */
+.footer-box {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Left box layout */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 00px;
+}
+
+/* Social icons row */
 .socials {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -287,9 +307,6 @@ footer {
   color: var(--muted);
 }
 
-
-
-
   /* small screens */
   @media (max-width:880px){
     .card-grid{grid-template-columns:repeat(2,1fr)}
@@ -310,6 +327,36 @@ footer {
   /* small helper */
   .muted{opacity:0.85;color:var(--muted);font-size:14px}
   a.cta-link {color:var(--accent);font-weight:600;text-decoration:none}
+
+/* Right box — QR code inside */
+.qr-box {
+  text-align: center;
+}
+
+.qr-box img {
+  width: 130px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  padding: 8px;
+  backdrop-filter: blur(6px);
+  transition: transform .25s ease;
+}
+
+.qr-box img:hover {
+  transform: translateY(-4px);
+}
+
+/* Copyright */
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+
 </style>
 </head>
 <body>
@@ -329,7 +376,8 @@ footer {
   <div class="brand">
     <div class="logo" aria-hidden="true">SS</div>
     <div>
-      <font size="3px"><b>Soumya Singha</b></font>
+        <font size="3px"><b>Soumya Singha</b></font>
+      <!-- <h4>Soumya Singha</h4> -->
       <!-- <div class="muted">Developer • Learner</div> -->
     </div>
   </div>
@@ -426,17 +474,21 @@ footer {
   </div>
 </section> -->
 
-
 <!-- Footer -->
 <footer>
 
-      <!-- Contact Section -->   
-    <section id="contact" class="reveal" aria-labelledby="contact-heading">
-  <h3 id="contact-heading">Contact</h3>
-  <p class="muted">For any query, mail me at: <a class="cta-link" href="mailto:soumyasworld@duck.com">soumyasworld@duck.com</a></p>
-</section>
-   
-<br>
+  <!-- LEFT BOX -->
+  <div class="footer-box footer-left">
+
+      <!-- Contact Section -->
+      <section id="contact" class="reveal" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Contact</h3>
+        <p class="muted">For any query, mail me at: 
+          <a class="cta-link" href="mailto:soumyasworld@duck.com">soumyasworld@duck.com</a>
+        </p>
+      </section>
+
+      <br>
   <div class="socials" aria-label="Social links">
 
     <!-- Replace # with your links -->
@@ -473,14 +525,32 @@ footer {
   </div>
 
 <br>
-  <div class="visitor-counter" aria-live="assertive">
-      <a href="https://www.freecounterstat.com" title="free web counter">
-        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=72zabnnhrg31pyhg368nyfgd332tcx8r" border="0" title="free web counter" alt="free web counter">
-        </a>
-    </div>
 
-  <div class="footer-copy">&copy; <span id="year"></span>, soumyasworld</div>
+      <!-- Visitor Counter -->
+      <div class="visitor-counter">
+        <a href="https://www.freecounterstat.com" title="Visitor Counter">
+          <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=4w61extjjqb19e51t5erjugqzgffengx" alt="Visitor Counter">
+        </a>  
+      </div>
+
+  </div>
+
+  <!-- RIGHT BOX -->
+  <div class="footer-box">
+    <div class="qr-box">
+      <h3>QR Code</h3>
+      <img src="soumyasworld.github.io_qr-code.jpg" alt="QR Code">
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-copy">
+    &copy; <span id="year"></span>, soumyasworld
+  </div>
+
 </footer>
+
+
 
 <!-- JavaScript (particles, theme toggle, scroll reveal, smooth scroll) -->
 <script>
@@ -721,4 +791,3 @@ document.addEventListener('keydown', (e)=>{
 
 </body>
 </html>
-
