@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asymmetric Encryption Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --primary: #2563eb;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f9fafb;
+    --card-bg: #ffffff;
+}
+
+/* GLOBAL FONT: CONSOLAS */
+* {
+    box-sizing: border-box;
+    font-family: Consolas, "Liberation Mono", Menlo,
+                 Monaco, "Courier New", monospace;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.65;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Sections */
+.section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 28px;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+/* Key info table */
+.key-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.key-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    vertical-align: top;
+}
+
+.key-table td:first-child {
+    width: 30%;
+    color: var(--text-muted);
+}
+
+/* Email */
+.email {
+    font-size: 18px;
+    color: var(--primary);
+    word-break: break-all;
+}
+
+/* Notice */
+.notice {
+    background: #f1f5ff;
+    border-left: 4px solid var(--primary);
+    padding: 14px;
+    font-size: 15px;
+    color: #1e3a8a;
+}
+
+/* Buttons */
+.download-btn,
+.copy-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.download-btn {
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+.copy-btn {
+    background: #e5e7eb;
+    border: none;
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    background: #d1d5db;
+}
+
+/* ======================
+   ORGANIZED PGP SECTION
+   ====================== */
+
+.pgp-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+}
+
+/* PGP Key box */
+.pgp-box {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    background: #f9fafb;
+    font-size: 13px;
+    line-height: 1.45;
+    white-space: pre;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* QR Image box */
+.qr-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.qr-box p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.qr-box img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 1px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 40px 0 20px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 720px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .pgp-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .download-btn,
+    .copy-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pgp-box {
+        font-size: 12px;
+        max-height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Asymmetric Encryption Information</h1>
+    <p>Public encryption key and secure communication details</p>
+</header>
+
+<section class="section">
+    <h2>Key Information</h2>
+    <table class="key-table">
+        <tr><td>User ID</td><td>SOUMYA SINGHA email</td></tr>
+        <tr><td>Valid From</td><td>09-08-2025 12:30 PM</td></tr>
+        <tr><td>Type</td><td>ECC (sign and encrypt)</td></tr>
+        <tr><td>Usage</td><td>Signature, Encryption, Authentication, Certification</td></tr>
+        <tr><td>Fingerprint</td>
+            <td>5DDF 2A5F 2285 AFB7 998D D003 E701 028A E353 7B43</td>
+        </tr>
+    </table>
+</section>
+
+<section class="section">
+    <h2>Public Email</h2>
+    <p class="email">soumyasworld@duck.com</p>
+</section>
+
+<section class="section">
+
+    <div class="notice">
+        Messages/files which are sent to me (especially over public channels),
+        are expected to be encrypted with the following GnuPG public key.
+    </div>
+</section>
+
+<section class="section">
+    <h2>Download Public Key</h2>
+    <a href="/aei/SOUMYA SINGHA email_public_key.asc" class="download-btn" download>
+        SOUMYA SINGHA email_public_key.asc
+    </a>
+</section>
+
+<section class="section">
+    <h2>PGP Public Key</h2>
+
+    <div class="pgp-layout">
+
+        <!-- LEFT: KEY -->
+        <div>
+            <div class="pgp-box" id="pgpKey">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaJZVuBYJKwYBBAHaRw8BAQdAlci3vYVQqmLJfHzlfWR5tZknQX4A+Ep6NvZm
+p0VwsuK0KVNPVU1ZQSBTSU5HSEEgPGlhbXNvdW15YXNpbmdoYUBnbWFpbC5jb20+
+iJMEExYKADsWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUCaJZVuAIbIwULCQgHAgIi
+AgYVCgkICwIEFgIDAQIeBwIXgAAKCRDnAQKK41N7QwHtAQDKwHq4yQGJTXwQ90Ga
+8ealrrQvtKDP/QG/LyEkIGS+rAD/bhCISvWN50kMe7k0Lf9hfzWxul4SqXhrsFIy
+mnISbQy4OARollW4EgorBgEEAZdVAQUBAQdAEZJ1WAPpF2XAx9T8gQfyYpv/YvgF
+mf5Cj49wjPBoKygDAQgHiHgEGBYKACAWIQRd3ypfIoWvt5mN0APnAQKK41N7QwUC
+aJZVuAIbDAAKCRDnAQKK41N7Q+0HAP42GReAnaTaLQagcZmJsqRNU1AsHe5PNQkV
+WrYACRBycwD+PWMnzAOlOCoomk40sTtJ1U9UzYk6RVr2vInye0zBrw0=
+=H8cN
+-----END PGP PUBLIC KEY BLOCK-----
+            </div>
+            <button class="copy-btn" onclick="copyKey()">Copy Public Key</button>
+        </div>
+
+        <!-- RIGHT: STATIC QR IMAGE -->
+        <div class="qr-box">
+            <p>Scan to import public key</p>
+            <img src="soumya_singha_pgp_public_key_qr.png" alt="PGP Public Key QR Code">
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 soumyasworld. All rights reserved.
+</footer>
+
+</div>
+
+<script>
+function copyKey() {
+    const text = document.getElementById("pgpKey").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Public key copied to clipboard.");
+}
+</script>
+
+</body>
+</html>
