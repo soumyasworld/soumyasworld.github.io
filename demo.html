@@ -144,10 +144,16 @@ header p {
     background: #f9fafb;
     font-size: 13px;
     line-height: 1.45;
-    white-space: pre;
+
+    /* 🔥 FIXES */
+    white-space: pre-wrap;      /* allow wrapping */
+    word-break: break-all;      /* break long base64 lines */
+    overflow-x: auto;           /* safety scroll */
+    max-width: 100%;
+
     max-height: 320px;
-    overflow-y: auto;
 }
+
 
 /* QR Image box */
 .qr-box {
@@ -196,7 +202,12 @@ footer {
 
     .pgp-box {
         font-size: 12px;
-        max-height: 220px;
+        max-height: 240px;
+        padding: 12px;
+    }
+
+    .section {
+        overflow: hidden; /* prevents visual overlap */
     }
 }
 </style>
